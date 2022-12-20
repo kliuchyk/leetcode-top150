@@ -5,34 +5,37 @@
  */
 
 // solution #1
-function isAnagram(s, t) {
-  if (s.length !== t.length) {
-    return false;
-  }
+// function isAnagram(s, t) {
+//   if (s.length !== t.length) {
+//     return false;
+//   }
 
-  if (s.length === 1 && t.length === 1) {
-    if (s === t) {
-      return true;
-    }
-  }
+//   if (s.length === 1 && t.length === 1) {
+//     if (s === t) {
+//       return true;
+//     }
+//   }
 
-  const tArr = t.split('');
+//   const tArr = t.split('');
 
-  for (let i = 0; i < s.length; i++) {
-    const index = tArr.indexOf(s[i]);
+//   for (let i = 0; i < s.length; i++) {
+//     const index = tArr.indexOf(s[i]);
 
-    if (index > -1) {
-      tArr.splice(index, 1);
-    }
-  }
+//     if (index > -1) {
+//       tArr.splice(index, 1);
+//     }
+//   }
 
-  return tArr.length === 0;
-}
+//   return tArr.length === 0;
+// }
 
 // solution #2
 function isAnagram(s, t) {
   let sMap = new Map();
   let tMap = new Map();
+
+  console.log('sMap: ', sMap);
+  console.log('tMap: ', tMap);
 
   for (let i = 0; i < s.length; i++) {
     // 1 sMap
@@ -58,3 +61,5 @@ function isAnagram(s, t) {
 
   return true;
 }
+
+console.log(isAnagram('car', 'rat'));
