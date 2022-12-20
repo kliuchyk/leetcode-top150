@@ -13,7 +13,6 @@ const numIdenticalPairs = function (nums) {
     }
   }
 
-  console.log('map: ', map);
   return Object.keys(map).length;
 };
 
