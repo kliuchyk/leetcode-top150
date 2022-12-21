@@ -15,5 +15,3 @@ const numIdenticalPairs = function (nums) {
 
   return Object.keys(map).length;
 };
-
-console.log(numIdenticalPairs(nums));

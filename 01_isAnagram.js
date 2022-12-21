@@ -61,5 +61,3 @@ function isAnagram(s, t) {
 
   return true;
 }
-
-isAnagram('car', 'rat');

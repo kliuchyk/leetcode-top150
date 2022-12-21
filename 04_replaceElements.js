@@ -30,5 +30,3 @@ function replaceElements(arr) {
 
   return arr;
 }
-
-replaceElements(arr);
