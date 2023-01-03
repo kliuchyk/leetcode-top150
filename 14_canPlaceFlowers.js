@@ -38,8 +38,6 @@ function canPlaceFlowers(flowerbed, n) {
       n--;
     }
   }
-
-  return n === 0;
 }
 
 const flowerbed = [1, 0, 0, 0, 1],
