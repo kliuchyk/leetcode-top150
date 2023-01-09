@@ -84,4 +84,4 @@ const maxNumberOfBalloons = function (text) {
   return minCount;
 };
 
-console.log(maxNumberOfBalloons('loonbalxballpoon'));
+console.log(maxNumberOfBalloons('balllllllllllloooooooooon'));
