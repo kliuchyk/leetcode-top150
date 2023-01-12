@@ -21,5 +21,3 @@ const cut = (s, i) => {
 function isPalindrome(s) {
   return s === s.split('').reverse().join('');
 }
-
-console.log(validPalindrome('cbbcc'));
