@@ -7,7 +7,16 @@ const isPalindrome = function (s) {
     return true;
   }
 
-  const strippedString = s.replace(/[^a-z0-9]/gi, '').toLowerCase();
+  const strippedStr = s.replace(/[^a-z0-9]/gi, '');
+  const lowered = strippedStr.toLowerCase();
 
-  return strippedString === strippedString.split('').reverse().join('');
+  for (let i = 0, j = lowered.length - 1; i < j; i++, j--) {
+    if (lowered[i] !== lowered[j]) {
+      return false;
+    }
+  }
+
+  return true;
 };
+
+console.log(isPalindrome('A man, a plan, a canal: Panama'));
