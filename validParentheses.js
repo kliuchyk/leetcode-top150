@@ -21,38 +21,40 @@ const isValid = function (s, stack = []) {
   }
 
   for (let i = 0; i < s.length; i++) {
-    const isOpenParentheses = s[i] === '(';
-    if (isOpenParentheses) {
+    const isOpenParenthesis = s[i] === '(';
+    const isOpenCurlyBrace = s[i] === '{';
+    const isOpenSquareBracket = s[i] === '[';
+
+    if (isOpenParenthesis) {
       stack.push(')');
     }
-
-    const isOpenCurlyBrace = s[i] === '{';
     if (isOpenCurlyBrace) {
       stack.push('}');
     }
-
-    const isOpenSquareBracket = s[i] === '[';
     if (isOpenSquareBracket) {
       stack.push(']');
     }
 
-    const isOpen = isOpenCurlyBrace || isOpenParentheses || isOpenSquareBracket;
+    const isOpen = isOpenParenthesis || isOpenCurlyBrace || isOpenSquareBracket;
     const isEmpty = stack.length === 0;
-    const isNotValid = s[i] !== stack[stack.length - 1];
+
+    if (isEmpty && !isOpen) {
+      return false;
+    }
 
     if (!isOpen) {
-      if (isEmpty || isNotValid) {
+      const lastItem = stack.pop();
+      if (lastItem !== s[i]) {
         return false;
       }
-
-      stack.pop();
     }
   }
 
   return stack.length === 0;
 };
 
-console.log(isValid('(){[()]}{}'));
+// console.log(isValid('(){[()]}{}'));
+console.log(isValid('()'));
 // console.log(isValid('()'));
 // console.log(isValid('(]'));
 
